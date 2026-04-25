@@ -1,0 +1,66 @@
+{
+  "auth": {
+    "failed": "Ces identifiants ne correspondent pas à nos enregistrements.",
+    "password": "Le mot de passe fourni est incorrect.",
+    "throttle": "Trop de tentatives de connexion. Veuillez réessayer dans :seconds secondes."
+  },
+  "pagination": {
+    "previous": "‹ Précédent",
+    "next": "Suivant ›"
+  },
+  "passwords": {
+    "sent": "Nous avons envoyé le lien de réinitialisation par email !",
+    "reset": "Votre mot de passe a été réinitialisé !",
+    "user": "Nous ne trouvons aucun utilisateur avec cette adresse email."
+  },
+  "validation": {
+    "required": "Ce champ est requis.",
+    "email": "Veuillez saisir une adresse email valide.",
+    "min": {
+      "string": "Le :attribute doit comporter au moins :min caractères."
+    },
+    "confirmed": "La confirmation du :attribute ne correspond pas."
+  },
+  "notifications": {
+    "success": "Succès !",
+    "error": "Erreur",
+    "warning": "Avertissement",
+    "info": "Information"
+  },
+  "school": {
+    "dashboard": "Tableau de bord",
+    "students": "Étudiants",
+    "teachers": "Enseignants",
+    "courses": "Cours",
+    "attendance": "Présence",
+    "grades": "Notes",
+    "billing": "Facturation",
+    "settings": "Paramètres"
+  },
+  "actions": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "create": "Créer",
+    "update": "Mettre à jour",
+    "back": "Retour",
+    "next": "Suivant",
+    "finish": "Terminer"
+  },
+  "messages": {
+    "saved": "Enregistré avec succès",
+    "deleted": "Supprimé avec succès",
+    "updated": "Mis à jour avec succès",
+    "created": "Créé avec succès",
+    "confirm_delete": "Êtes-vous sûr de vouloir supprimer cet élément ?"
+  },
+  "subscription": {
+    "trial": "Essai",
+    "active": "Actif",
+    "expired": "Expiré",
+    "cancelled": "Annulé",
+    "past_due": "En retard"
+  }
+}

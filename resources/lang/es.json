@@ -1,0 +1,66 @@
+{
+  "auth": {
+    "failed": "Estas credenciales no coinciden con nuestros registros.",
+    "password": "La contraseña proporcionada es incorrecta.",
+    "throttle": "Demasiados intentos de inicio de sesión. Por favor, inténtelo de nuevo en :seconds segundos."
+  },
+  "pagination": {
+    "previous": "‹ Anterior",
+    "next": "Siguiente ›"
+  },
+  "passwords": {
+    "sent": "¡Hemos enviado el enlace de restablecimiento por correo!",
+    "reset": "¡Tu contraseña ha sido restablecida!",
+    "user": "No podemos encontrar un usuario con esa dirección de correo."
+  },
+  "validation": {
+    "required": "Este campo es obligatorio.",
+    "email": "Por favor, introduce una dirección de correo válida.",
+    "min": {
+      "string": "El :attribute debe tener al menos :min caracteres."
+    },
+    "confirmed": "La confirmación de :attribute no coincide."
+  },
+  "notifications": {
+    "success": "¡Éxito!",
+    "error": "Error",
+    "warning": "Advertencia",
+    "info": "Información"
+  },
+  "school": {
+    "dashboard": "Panel",
+    "students": "Estudiantes",
+    "teachers": "Profesores",
+    "courses": "Cursos",
+    "attendance": "Asistencia",
+    "grades": "Calificaciones",
+    "billing": "Facturación",
+    "settings": "Configuración"
+  },
+  "actions": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "create": "Crear",
+    "update": "Actualizar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "finish": "Finalizar"
+  },
+  "messages": {
+    "saved": "Guardado exitosamente",
+    "deleted": "Eliminado exitosamente",
+    "updated": "Actualizado exitosamente",
+    "created": "Creado exitosamente",
+    "confirm_delete": "¿Estás seguro de que deseas eliminar este elemento?"
+  },
+  "subscription": {
+    "trial": "Prueba",
+    "active": "Activo",
+    "expired": "Expirado",
+    "cancelled": "Cancelado",
+    "past_due": "Vencido"
+  }
+}
