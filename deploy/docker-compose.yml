@@ -1,0 +1,100 @@
+# Docker Compose for local development/testing
+# Not for production use - use VPS deployment scripts instead
+
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.app
+    container_name: saas_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ../:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=saas
+      - DB_USERNAME=saas
+      - DB_PASSWORD=saas
+      - REDIS_HOST=redis
+    depends_on:
+      - db
+      - redis
+    networks:
+      - saas_network
+
+  db:
+    image: postgres:15
+    container_name: saas_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: saas
+      POSTGRES_USER: saas
+      POSTGRES_PASSWORD: saas
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - saas_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: saas_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - saas_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: saas_nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ../:/var/www
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - saas_network
+
+  queue:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.worker
+    container_name: saas_queue
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ../:/var/www
+    environment:
+      - APP_ENV=local
+      - DB_HOST=db
+      - REDIS_HOST=redis
+    depends_on:
+      - app
+      - db
+      - redis
+    networks:
+      - saas_network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  saas_network:
+    driver: bridge
